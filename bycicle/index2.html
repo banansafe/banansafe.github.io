@@ -87,6 +87,84 @@ img{
         footer{
            background-color: #grey; 
         }
+        .regButton {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 6px 24px;
+            cursor: pointer;
+            margin: 15px auto;
+        }
+
+        .regButton:hover {
+            background: #ccc;
+        }
+        .regButton {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 6px 24px;
+            cursor: pointer;
+            margin: 15px auto;
+        }
+
+        .regButton:hover {
+            background: #ccc;
+        }
+        .form {
+            width: 275px;
+            margin: -15px auto 20px auto;
+            text-align: center;
+        }
+        nav{
+        font-family: 'Press Start 2P', cursive;
+    }
+        #window {
+            width: 350px;
+            height: 530px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 15px;
+            z-index: 5;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.2s 0.1s;
+        }
+ .input {
+            width: 260px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .body{
+            background-color: orange;
+        }
+        #shadow {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            background: #000;
+            opacity: 0.2;
+            left: 0;
+            top: 0;
+        }
+        .close {
+            display: inline-block;
+            margin: 10px 0 0 320px;
+            cursor: pointer;
+            background: #fff;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .close:hover {
+            background: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -230,12 +308,29 @@ img{
     </ul>
   </div>
   <div class="footer-bottom">
-      <p>Надіємося,ці поради вам допоможуть у пошуку велосипеда</p>
+      <p>Надіємося,ці поради вам допоможуть у пошуку велосипеда,можете переглянути наші пропозиції <a href="index3.html">тут</a></p>
   </div>
 </footer>  
-
+<div class="form">
+  <h2>Реєстрація</h2>
+  <form action="html.html" name="f1">
+  <input type="text" required placeholder="Ім'я" name="name1" class="input">
+  <input type="text" required placeholder="Прізвище" name="name2" class="input">
+  <input type="email" required placeholder="E-mail" name="email1" class="input">
+  <input type="email" required placeholder="Підтвердіть e-mail" name="email2" class="input">
+  <input type="password" required placeholder="Пароль" name="pass1" class="input">
+  <input type="password" required placeholder="Підтвердіть Пароль" name="pass2" class="input">
+  <input type="tel" required placeholder="Мобільний телефон" name="tel" class="input">
+  <input type="radio" required name="radio1" >Чоловік
+  <input type="radio"  name="radio1" class="radio">Жінка
+  <input type="submit" value="Реєстрація" name="sab" class="input">
+  </form>
+  </div>
+  </div>
+</div>
 
   
-<script src="https://kit.fontawesome.com/24e14e3299.js" crossorigin="anonymous"></script>    
+<script src="https://kit.fontawesome.com/24e14e3299.js" crossorigin="anonymous"></script> 
+<script src="inda.js"></script>   
 </body>
 </html>

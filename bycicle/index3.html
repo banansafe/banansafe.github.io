@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .search {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px ;
+            box-shadow: 2px 2px 12px darkturquoise;
+            border-radius: 20px;
+background-color: black;
+        }
+
+        .search>input {
+            width: 90%;
+            height: 50px;
+            border-radius: 20px;
+            outline: 0;
+            border: 2px solid bisque;
+            padding: 20px;
+            background-color: ivory;
+        }
+
+        .search>input:focus {
+            box-shadow: 2px 2px 5px rgb(205, 205, 206);
+        }
+
+        .film-list {
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* */
+        }
+
+        .list-item {
+            width: 200px;
+            transition: all 1s;
+
+        }
+
+        .poster {
+            height: 250px;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .poster>img {
+            padding-top: 50px;
+            height: auto;
+            width:  192px;
+        }
+
+        .active {
+            box-shadow: 0px 0px 10px violet;
+            transform: scale(1.1);
+            z-index: 2;
+            position: absolute;
+        }
+
+        .rel {
+            position: relative;
+        }
+        .card-text{
+            color:blueviolet;
+        }
+        .card{
+            border:4px double black ;
+            background-color: grey;
+        }
+        body{
+         background-color: lightcoral;
+   
+    
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Велосипеди</h1>
+    <div class="container" id="film-app">
+        <div class="search">
+            <input type="text" placeholder="Введіть назву" v-model="searchString">
+        </div>
+        {{searchString}}
+        <ul class="film-list">
+            <li class="list-item" v-for="(item, index) in myFilter">
+                <!-- сюда вставляємо карточку -->
+                <div class="rel">
+                    <div class="card" v-on:mouseenter="showDetails(index)" v-on:mouseleave="hideDetails"
+                        v-bind:class="{'active':currentIndex == index}">
+
+                        <div class="poster">
+                            <img v-bind:src="item.image" class="card-img-top" alt="">
+
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{item.name}}</h3>
+                            <h3 class="card-text">Ціна: {{item.duration}}</h3>
+                            <p class="card-text"> {{item.marks}}</p>
+                            <p class="card-text"></p>
+               
+
+                            <div class="about" v-if="currentIndex == index">
+                                {{item.actors}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+<script src="hero.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>   
+</body>
+</html>
